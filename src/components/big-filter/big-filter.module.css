@@ -23,7 +23,8 @@
     margin-bottom: 20px;
 
     select {
-      max-width: 95vw;
+      width: 100%;
+      max-width: 100%;
       display: block;
       margin-bottom: 10px;
       border: 2px solid var(--initial);
