@@ -24,6 +24,7 @@ const Card = ({
   url,
   images,
   phone,
+  resetCardData
 }: any) => {
   const formatNumber = (num: any) => {
     return new Intl.NumberFormat("en-US", {
@@ -43,6 +44,7 @@ const Card = ({
 
   return (
     <div className={clsx(styles.card, customClass)}>
+      <div className={styles.close__button} onClick={resetCardData}></div>
       <Swiper
         loop={true}
         pagination={{ clickable: true }}

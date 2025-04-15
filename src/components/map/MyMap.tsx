@@ -23,7 +23,11 @@ const MyMap = () => {
     <div className={styles.map}>
       {cardData !== null && (
         <OutsideClickHandler onOutsideClick={() => setCardData(null)}>
-          <Card customClass={styles.map__modal} {...cardData} />
+          <Card
+            resetCardData={() => setCardData(null)}
+            customClass={styles.map__modal}
+            {...cardData}
+          />
         </OutsideClickHandler>
       )}
       <YMaps>

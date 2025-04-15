@@ -1,4 +1,5 @@
 import clsx from "clsx";
+
 import Button from "../ui/button/Button";
 
 import filterIcon from "../../images/icons/filter.png";
@@ -8,6 +9,7 @@ import locationIcon from "../../images/icons/location.png";
 import styles from "./main.module.css";
 
 const Tabs = ({ adsShowType, setAdsShowType, setFilterIsOpen }: any) => {
+
   const changeAdsShowType = () => {
     if (adsShowType === "На карте") {
       setAdsShowType("Списком");
