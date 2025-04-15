@@ -63,15 +63,19 @@
   position: relative;
 
   .close__button {
-    padding: 10px;
+    padding: 20px;
     position: absolute;
-    top: 3px;
-    right: 3px;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background-color: #b8b8b8dc;
 
     &::after, &::before {
-      width: 2px;
-      height: 10px;
-      background-color: #000;
+      content: "";
+      width: 3px;
+      height: 30px;
+      border-radius: 2px;
+      background-color: #fff;
       position: absolute;
       top: 50%;
       left: 50%;
