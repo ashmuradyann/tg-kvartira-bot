@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tg-kvartira-bot/static/css/main.7362354a.css",
+    "main.js": "/tg-kvartira-bot/static/js/main.806c0f96.js",
+    "index.html": "/tg-kvartira-bot/index.html",
+    "main.7362354a.css.map": "/tg-kvartira-bot/static/css/main.7362354a.css.map",
+    "main.806c0f96.js.map": "/tg-kvartira-bot/static/js/main.806c0f96.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7362354a.css",
+    "static/js/main.806c0f96.js"
+  ]
+}
