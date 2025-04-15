@@ -1,8 +1,12 @@
 .main {
   width: 100%;
+  padding-top: 62px;
 
   .tabs {
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     z-index: 4;
     padding: 7px 10px;
     gap: 6px;
