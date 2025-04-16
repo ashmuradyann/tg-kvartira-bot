@@ -1,15 +1,23 @@
+import { useState } from "react";
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
 
 import styles from "./big-filter.module.css";
-import { useRef, useState } from "react";
+import Button from "../ui/button/Button";
 
 const BigFilter = () => {
   const [apartamentType, setApartamentType] = useState<number>(5);
-  const [apartamentPlan, setApartamentPlan] = useState<number>(5);
-  const [apartamentFloor, setApartamentFloor] = useState<number>(5);
-  const [buildingFloor, setBuildingFloor] = useState<number>(5);
+  const [apartamentTypeValue, setApartamentTypeValue] = useState<string[]>([]);
 
+  const [apartamentPlan, setApartamentPlan] = useState<number>(5);
+  const [apartamentPlanValue, setApartamentPlanValue] = useState<string[]>([]);
+
+  const [apartamentFloor, setApartamentFloor] = useState<number>(5);
+  const [apartamentFloorValue, setApartamentFloorValue] = useState<string[]>(
+    []
+  );
+
+  const [buildingFloor, setBuildingFloor] = useState<number>(5);
   const [floorValue, setFloorValue] = useState<number>(5);
   const [buildingFloorValue, setBuildingFloorValue] = useState<number>(5);
 
@@ -20,8 +28,34 @@ const BigFilter = () => {
     "Исключить застройщика"
   );
 
+  const saveFilterValues = () => {
+    alert(
+      `Тип жилья: ${apartamentTypeValue.join(
+        ", "
+      )}\nПриоритет типа жилья: ${apartamentType}\nПланировка: ${apartamentPlanValue.join(
+        ", "
+      )}\nПриоритет планировки: ${apartamentPlan}\nЭтаж: ${floorValue} ${apartamentFloorValue.join(
+        ", "
+      )}\nПриоритет этажа: ${apartamentFloor}\nЭтажей в доме: ${floorValue} ${buildingFloorValue}\nПриоритет этажей в доме: ${buildingFloor}\nЗастройщик: ${selectedBuilderValue}\nИсключенный застройщик: ${excludedBuilderValue}`
+    );
+  };
+
+  const setCheckboxState = (element: any, setFunction: any) => {
+    const elName = element.target.name;
+    setFunction((prev: any) => {
+      if (prev?.includes(elName) && prev?.length !== 0) {
+        return prev?.filter((el: string) => el !== elName);
+      } else {
+        return [...prev, elName];
+      }
+    });
+  };
+
   return (
     <div className={styles.big__filter}>
+      <Button customClassName={styles.save__button} onClick={saveFilterValues}>
+        Сохранить
+      </Button>
       <p className={styles.title}>Все фильтры</p>
       <p className={styles.subtitle}>Общие</p>
       <div className={styles.filter__block}>
@@ -37,11 +71,19 @@ const BigFilter = () => {
           />
           <p>Приоритет при подборе: {apartamentType}</p>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              name="Квартира"
+              type="checkbox"
+              onChange={(e) => setCheckboxState(e, setApartamentTypeValue)}
+            />
             Квартира
           </label>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              name="Апартаменты"
+              type="checkbox"
+              onChange={(e) => setCheckboxState(e, setApartamentTypeValue)}
+            />
             Апартаменты
           </label>
         </div>
@@ -59,11 +101,19 @@ const BigFilter = () => {
           />
           <p>Приоритет при подборе: {apartamentPlan}</p>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              name="Смежная"
+              type="checkbox"
+              onChange={(e) => setCheckboxState(e, setApartamentPlanValue)}
+            />
             Смежная
           </label>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              name="Изолированная"
+              type="checkbox"
+              onChange={(e) => setCheckboxState(e, setApartamentPlanValue)}
+            />
             Изолированная
           </label>
         </div>
@@ -98,15 +148,27 @@ const BigFilter = () => {
             onChange={(e: any) => setFloorValue(e.target.value)}
           />
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              name="Не первый"
+              type="checkbox"
+              onChange={(e) => setCheckboxState(e, setApartamentFloorValue)}
+            />
             Не первый
           </label>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              name="Не последний"
+              type="checkbox"
+              onChange={(e) => setCheckboxState(e, setApartamentFloorValue)}
+            />
             Не последний
           </label>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              name="Только последний"
+              type="checkbox"
+              onChange={(e) => setCheckboxState(e, setApartamentFloorValue)}
+            />
             Только последний
           </label>
         </div>

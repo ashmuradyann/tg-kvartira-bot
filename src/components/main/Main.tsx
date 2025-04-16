@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import clsx from "clsx";
 
 import Tabs from "./Tabs";
 import AdList from "../ad-list/AdList";
 import MyMap from "../map/MyMap";
-import Button from "../ui/button/Button";
 
 import styles from "./main.module.css";
 import BigFilter from "../big-filter/BigFilter";

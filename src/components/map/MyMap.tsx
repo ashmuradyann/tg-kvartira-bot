@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   YMaps,
   Map,
-  ObjectManager,
   Placemark,
   Clusterer,
 } from "react-yandex-maps";

@@ -3,11 +3,21 @@
   height: calc(100vh - 62px);
   background-color: #fff;
   position: fixed;
-  top: 62px;
+  top: 0;
   left: 0;
   z-index: 3;
-  padding: 10px;
+  padding: 10px 10px 50px 10px;
   overflow-y: auto;
+  position: relative;
+
+  .save__button {
+    position: fixed;
+    bottom: 8px;
+    right: 25px;
+    z-index: 2;
+    padding: 10px 20px;
+    font-size: 26px;
+  }
 
   .title {
     font-size: 32px;
