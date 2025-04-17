@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tg-kvartira-bot/static/css/main.29502380.css",
-    "main.js": "/tg-kvartira-bot/static/js/main.e6343f11.js",
+    "main.js": "/tg-kvartira-bot/static/js/main.4c3a75d4.js",
     "index.html": "/tg-kvartira-bot/index.html",
     "main.29502380.css.map": "/tg-kvartira-bot/static/css/main.29502380.css.map",
-    "main.e6343f11.js.map": "/tg-kvartira-bot/static/js/main.e6343f11.js.map"
+    "main.4c3a75d4.js.map": "/tg-kvartira-bot/static/js/main.4c3a75d4.js.map"
   },
   "entrypoints": [
     "static/css/main.29502380.css",
-    "static/js/main.e6343f11.js"
+    "static/js/main.4c3a75d4.js"
   ]
 }
